@@ -21,16 +21,10 @@ public class BoardGame {
         if (currentPlayers < maxPlayers){
             currentPlayers++;
         }
-        else {
-            System.out.println("current number of players is maximum");
-        }
     }
     public void removePlayers(){
         if (currentPlayers >= 1){
             currentPlayers--;
-        }
-        else {
-            System.out.println("there are no players in this game");
         }
     }
     public Boolean canPlay(){
@@ -38,13 +32,15 @@ public class BoardGame {
     }
 
     public static void main(String[] args) {
-        BoardGame Dixit = new BoardGame();
-        BoardGame Twister = new BoardGame("Twister", 2, 6, 3);
 
-        BoardGame[] boardGames = { Dixit, Twister, getInstance(), getInstance()};
+        BoardGame[] boardGames = { new BoardGame(),
+                new BoardGame("Twister", 2, 6, 3),
+                getInstance(),
+                getInstance()
+        };
 
         for (BoardGame game : boardGames){
-            System.out.println(game.toString());
+            System.out.println(game);
         }
 
     }
