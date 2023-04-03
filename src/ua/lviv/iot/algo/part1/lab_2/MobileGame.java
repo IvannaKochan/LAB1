@@ -7,28 +7,28 @@ import lombok.*;
 public class MobileGame extends Game {
 
     private String androidVersion;
-    private  int maxPlayers;
 
     public MobileGame(String gameName, String gameDescription, String gamePublisher, int currentPlayers, int reliseYear,
                       int minimumAgeForThisGame, String language, String androidVersion, int maxPlayers) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
+        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
         this.androidVersion = androidVersion;
-        this.maxPlayers = maxPlayers;
     }
 
     @Override
     public int connectPlayer(){
-        if (currentPlayers < maxPlayers) {
-            currentPlayers++;
+        int temperaryVariableForConnectingPlayer = currentPlayers;
+        if (temperaryVariableForConnectingPlayer < maxPlayers) {
+            temperaryVariableForConnectingPlayer++;
         }
-        return currentPlayers;
+        return temperaryVariableForConnectingPlayer;
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
-            currentPlayers--;
+        int temperaryVariableForDisconnectingPlayer = currentPlayers;
+        if (temperaryVariableForDisconnectingPlayer >= 1){
+            temperaryVariableForDisconnectingPlayer--;
         }
-        return currentPlayers;
+        return temperaryVariableForDisconnectingPlayer;
     }
 }

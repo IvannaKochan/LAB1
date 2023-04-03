@@ -7,30 +7,30 @@ import lombok.*;
 public class BoardGame extends Game {
 
     private int minPlayers;
-    private int maxPlayers;
 
     public BoardGame(String gameName,String gameDescription, String gamePublisher, int currentPlayers, int reliseYear, int minimumAgeForThisGame,
                      String language, int minPlayers, int maxPlayers) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
-        this.maxPlayers = maxPlayers;
+        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
         this.minPlayers = minPlayers;
     }
 
     @Override
     public int connectPlayer(){
-        if (currentPlayers < maxPlayers) {
-            currentPlayers++;
+        int temperaryVariableForConnectingPlayer = currentPlayers;
+        if (temperaryVariableForConnectingPlayer < maxPlayers) {
+            temperaryVariableForConnectingPlayer++;
         }
-        return currentPlayers;
+        return temperaryVariableForConnectingPlayer;
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
-            currentPlayers--;
+        int temperaryVariableForDisconnectingPlayer = currentPlayers;
+        if (temperaryVariableForDisconnectingPlayer >= 1){
+            temperaryVariableForDisconnectingPlayer--;
         }
-        return currentPlayers;
+        return temperaryVariableForDisconnectingPlayer;
     }
 
-};
+}
 

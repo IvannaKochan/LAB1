@@ -6,27 +6,27 @@ import lombok.*;
 @ToString(callSuper = true)
 public class EducationalGame extends Game{
 
-    private int maxPlayers;
     private String subject;
     public EducationalGame(String gameName, String gameDescription, String gamePublisher, int currentPlayers, int reliseYear, int minimumAgeForThisGame, String language, int maxPlayers, String  subject) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
-        this.maxPlayers = maxPlayers;
+        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
         this.subject = subject;
     }
 
     @Override
     public int connectPlayer(){
-        if (currentPlayers < maxPlayers) {
-            currentPlayers++;
+        int temperaryVariableForConnectingPlayer = currentPlayers;
+        if (temperaryVariableForConnectingPlayer < maxPlayers) {
+            temperaryVariableForConnectingPlayer++;
         }
-        return currentPlayers;
+        return temperaryVariableForConnectingPlayer;
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
-            currentPlayers--;
+        int temperaryVariableForDisconnectingPlayer = currentPlayers;
+        if (temperaryVariableForDisconnectingPlayer >= 1){
+            temperaryVariableForDisconnectingPlayer--;
         }
-        return currentPlayers;
+        return temperaryVariableForDisconnectingPlayer;
     }
 }

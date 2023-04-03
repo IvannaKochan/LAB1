@@ -11,34 +11,33 @@ public class ComputerGame extends Game{
     private String gamePlatform;
     private double rating;
     private int minPlayers;
-    private int maxPlayers;
-
 
     public ComputerGame(String gameName,String gameDescription, String gamePublisher, int currentPlayers, int reliseYear,
                         int minimumAgeForThisGame, String language, String gameVersion, String gameGenre, String gamePlatform,
                         double rating, int maxPlayers, int minPlayers) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
+        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
         this.gameVersion = gameVersion;
         this.gameGenre = gameGenre;
         this.gamePlatform = gamePlatform;
         this.rating = rating;
-        this.maxPlayers = maxPlayers;
         this.minPlayers = minPlayers;
     }
 
     @Override
     public int connectPlayer(){
-        if (currentPlayers < maxPlayers) {
-            currentPlayers++;
+        int temperaryVariableForConnectingPlayer = currentPlayers;
+        if (temperaryVariableForConnectingPlayer < maxPlayers) {
+            temperaryVariableForConnectingPlayer++;
         }
-        return currentPlayers;
+        return temperaryVariableForConnectingPlayer;
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
-            currentPlayers--;
+        int temperaryVariableForDisconnectingPlayer = currentPlayers;
+        if (temperaryVariableForDisconnectingPlayer >= 1){
+            temperaryVariableForDisconnectingPlayer--;
         }
-        return currentPlayers;
+        return temperaryVariableForDisconnectingPlayer;
     }
 }
