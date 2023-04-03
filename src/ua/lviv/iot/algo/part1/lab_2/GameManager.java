@@ -37,13 +37,13 @@ public class GameManager {
     public static void addGame(final Game game){games.add(game);}
 
     public static void findAllYoungerThan(int reliseYearTheOldestGame){
-        System.out.println("Games which was relised later than" +reliseYearTheOldestGame +"year:");
+        System.out.println("Games which was relised later than " +reliseYearTheOldestGame +" year:");
         games.stream().filter(g ->(g.getReliseYear() > reliseYearTheOldestGame)).toList().forEach(System.out::println);
     }
 
     public static void findAllForThisNumberOfPlayers(int numberOfPlayers){
-        System.out.println("Games which you can play together for" + numberOfPlayers + "persons:");
-        games.stream().filter(g -> (numberOfPlayers < g.getMaxPlayers)).toList().forEach(System.out::println);
+        System.out.println("Games which you can play together for " + numberOfPlayers + " persons:");
+        games.stream().filter(g -> (numberOfPlayers <= g.maxPlayers)).toList().forEach(System.out::println);
     }
 
 }
