@@ -1,5 +1,4 @@
 package ua.lviv.iot.algo.part1.lab_2;
-
 import lombok.*;
 
 @Setter

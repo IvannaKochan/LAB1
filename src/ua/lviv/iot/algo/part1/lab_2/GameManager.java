@@ -43,7 +43,7 @@ public class GameManager {
 
     public static void findAllForThisNumberOfPlayers(int numberOfPlayers){
         System.out.println("Games which you can play together for" + numberOfPlayers + "persons:");
-        games.stream().filter(g -> (numberOfPlayers < g.getMaxPlayer)).toList().forEach(System.out::println);
+        games.stream().filter(g -> (numberOfPlayers < g.getMaxPlayers)).toList().forEach(System.out::println);
     }
 
 }

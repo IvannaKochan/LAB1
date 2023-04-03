@@ -6,14 +6,14 @@ import lombok.*;
 @ToString
 public abstract class Game {
 
-    public int getMaxPlayer;
-    private String gameName;
-    private String gameDescription;
+    public int getMaxPlayers;
+    protected String gameName;
+    protected String gameDescription;
     protected String gamePublisher;
     protected int currentPlayers;
     protected int reliseYear;
-    private int minimumAgeForThisGame;
-    private String language;
+    protected int minimumAgeForThisGame;
+    protected String language;
 
     public abstract int connectPlayer();
     public abstract int disconnectPlayer();
@@ -26,8 +26,6 @@ public abstract class Game {
         this.reliseYear = reliseYear;
         this.minimumAgeForThisGame = minimumAgeForThisGame;
         this.language = language;
-    };
-
-
-
+    }
+    
 }
