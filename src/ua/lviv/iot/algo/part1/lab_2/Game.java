@@ -4,6 +4,7 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
 public abstract class Game {
 
     protected int maxPlayers;
@@ -28,5 +29,5 @@ public abstract class Game {
         this.language = language;
         this.maxPlayers = maxPlayers;
     }
-    
+
 }

@@ -14,19 +14,17 @@ public class EducationalGame extends Game{
 
     @Override
     public int connectPlayer(){
-        int temperaryVariableForConnectingPlayer = currentPlayers;
-        if (temperaryVariableForConnectingPlayer < maxPlayers) {
-            temperaryVariableForConnectingPlayer++;
+        if (currentPlayers < maxPlayers) {
+            return currentPlayers++;
         }
-        return temperaryVariableForConnectingPlayer;
+        return currentPlayers;
     }
 
     @Override
     public int disconnectPlayer() {
-        int temperaryVariableForDisconnectingPlayer = currentPlayers;
-        if (temperaryVariableForDisconnectingPlayer >= 1){
-            temperaryVariableForDisconnectingPlayer--;
+        if (currentPlayers >= 1){
+            return currentPlayers--;
         }
-        return temperaryVariableForDisconnectingPlayer;
+        return 0;
     }
 }
