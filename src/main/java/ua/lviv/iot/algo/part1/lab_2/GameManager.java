@@ -24,8 +24,8 @@ public class GameManager {
         GameManager.addGame(new EducationalGame("AR Book","Some description 8", "Publisher 8",
                 1, 2023, 12, "English", 1, "Physics"));
 
-        GameManager.findAllYoungerThan(2019);
-        GameManager.findAllForThisNumberOfPlayers(10);
+        GameManager.findAllGamesYoungerThan(games, 2019);
+        GameManager.findAllGamesForThisNumberOfPlayers(games, 10);
 
         for (Game game: games) {
             System.out.println("After adding, number of player is " + game.connectPlayer());
@@ -36,16 +36,23 @@ public class GameManager {
 
     public static void addGame(final Game game){games.add(game);}
 
-    public static void findAllYoungerThan(int reliseYearTheOldestGame){
-        System.out.println("Games which was relised later than " +reliseYearTheOldestGame +" year:");
-        games.stream().filter(g ->(g.getReliseYear() > reliseYearTheOldestGame)).toList().forEach(System.out::println);
+    public static List<Game> findAllGamesYoungerThan(List<Game> gamesList, int reliseYearTheOldestGame) {
+        return gamesList.stream().filter(g ->(g.getReliseYear() > reliseYearTheOldestGame)).toList();
     }
 
-    public static void findAllForThisNumberOfPlayers(int numberOfPlayers){
-        System.out.println("Games which you can play together for " + numberOfPlayers + " persons:");
-        games.stream().filter(g -> (numberOfPlayers <= g.maxPlayers)).toList().forEach(System.out::println);
+    public static List<Game> findAllGamesForThisNumberOfPlayers(List<Game> gamesList, int numberOfPlayers) {
+        return gamesList.stream().filter(g -> (numberOfPlayers <= g.maxPlayers)).toList();
     }
 
+    public static void printAllGamesYoungerThan(List<Game> gamesList, int reliseYearTheOldestGame){
+        System.out.println("Games which was realised later than "+ reliseYearTheOldestGame + ":");
+        findAllGamesYoungerThan(gamesList, reliseYearTheOldestGame).forEach(System.out::println);
+    }
+
+    public static void printAllGamesWithNeededNumberOfPlayer(List<Game> gameList, int numberOfPlayers) {
+        System.out.println("Games in which can play" + numberOfPlayers + "number of players");
+        findAllGamesForThisNumberOfPlayers(gameList, numberOfPlayers).forEach(System.out::println);
+    }
 }
 
 
