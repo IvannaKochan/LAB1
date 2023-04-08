@@ -4,20 +4,20 @@ import lombok.*;
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class BoardGame extends Game {
+public class MobileGame extends Game {
 
-    private int minPlayers;
+    private String androidVersion;
 
-    public BoardGame(String gameName,String gameDescription, String gamePublisher, int currentPlayers, int reliseYear, int minimumAgeForThisGame,
-                     String language, int minPlayers, int maxPlayers) {
+    public MobileGame(String gameName, String gameDescription, String gamePublisher, int currentPlayers, int reliseYear,
+                      int minimumAgeForThisGame, String language, String androidVersion, int maxPlayers) {
         super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
-        this.minPlayers = minPlayers;
+        this.androidVersion = androidVersion;
     }
 
     @Override
     public int connectPlayer(){
         if (currentPlayers < maxPlayers) {
-            return currentPlayers++;
+            return ++currentPlayers;
         }
         return currentPlayers;
     }
@@ -25,10 +25,8 @@ public class BoardGame extends Game {
     @Override
     public int disconnectPlayer() {
         if (currentPlayers >= 1){
-            return currentPlayers--;
+            return --currentPlayers;
         }
         return 0;
     }
-
 }
-

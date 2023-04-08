@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.lab_2;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @ToString(callSuper = true)
@@ -26,7 +29,7 @@ public class ComputerGame extends Game{
     @Override
     public int connectPlayer(){
         if (currentPlayers < maxPlayers) {
-            return currentPlayers++;
+            return ++currentPlayers;
         }
         return currentPlayers;
     }
@@ -34,7 +37,7 @@ public class ComputerGame extends Game{
     @Override
     public int disconnectPlayer() {
         if (currentPlayers >= 1){
-            return currentPlayers--;
+            return --currentPlayers;
         }
         return 0;
     }

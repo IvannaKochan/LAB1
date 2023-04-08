@@ -4,7 +4,6 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-@AllArgsConstructor
 public abstract class Game {
 
     protected int maxPlayers;

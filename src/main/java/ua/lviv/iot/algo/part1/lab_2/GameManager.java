@@ -14,7 +14,7 @@ public class GameManager {
                 "PS4", 4.5 , 22, 22));
         GameManager.addGame(new ComputerGame("S.T.A.L.K.E.R. 2","Some description 4", "GSC Game World",
                 32, 2023, 16, "English", "2.0.1", "horor",
-                "Windows", 9.9, +100, 1));
+                "Windows", 9.9, 100, 1));
         GameManager.addGame(new MobileGame("Clash Of Clans","Some description 5", "Publisher 5",
                 2, 2012, 8, "English", "8.0.0", 2));
         GameManager.addGame(new MobileGame("Hay Day","Some description 6", "Publisher 6",
