@@ -8,6 +8,7 @@ public class ComputerGameTest {
     private ComputerGame computerGame1;
     private ComputerGame computerGame2;
     private ComputerGame computerGame3;
+    private ComputerGame computerGame4;
     @Before public void setUp() {
         computerGame1 = new ComputerGame("Fifa2023", "Some description 3",
                 "Publisher 3", 22, 2023, 12, "English",
@@ -20,6 +21,10 @@ public class ComputerGameTest {
         computerGame3 = new ComputerGame("new name", "Some description 4",
                 "GSC Game World", 1, 2023, 16, "English",
                 "2.0.1", "horor", "Windows", 9.9, 100, 1);
+
+        computerGame4 = new ComputerGame("-", "-",
+                "-", 1, 2023, 16, "-",
+                "-", "-", "-", 9.9, 100, 1);
     }
 
     @Test
@@ -34,6 +39,13 @@ public class ComputerGameTest {
         Assert.assertEquals(21, computerGame1.disconnectPlayer());
         Assert.assertEquals(49, computerGame2.disconnectPlayer());
         Assert.assertEquals(0, computerGame3.disconnectPlayer());
+    }
+
+    @Test
+    public void testToString(){
+        Assert.assertEquals("ComputerGame(super=Game(maxPlayers=100, gameName=-, gameDescription=-," +
+                " gamePublisher=-, currentPlayers=1, reliseYear=2023, minimumAgeForThisGame=16, language=-), " +
+                "gameVersion=-, gameGenre=-, gamePlatform=-, rating=9.9, minPlayers=1)", computerGame4.toString());
     }
 
 }

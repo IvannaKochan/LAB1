@@ -1,9 +1,6 @@
 package ua.lviv.iot.algo.part1.lab_2;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Setter
 @Getter
 @ToString(callSuper = true)

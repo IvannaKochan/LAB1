@@ -6,6 +6,7 @@ import org.junit.Test;
 public class MobileGameTest  {
     private MobileGame mobileGame1;
     private MobileGame mobileGame2;
+    private MobileGame mobileGame3;
 
     @Before
     public void setUp(){
@@ -13,6 +14,8 @@ public class MobileGameTest  {
              2, 2012, 8, "English", "8.0.0", 2);
      mobileGame2 = new MobileGame("Hay Day","Some description 6", "Publisher 6",
              1, 2016, 3, "English", "7.5.3", 1000);
+     mobileGame3 = new MobileGame("-","-", "-", 1, 2016,
+             3, "-", "-", 1000);
     }
 
     @Test
@@ -25,5 +28,12 @@ public class MobileGameTest  {
     public void testDisconnectPlayer() {
         Assert.assertEquals(1, mobileGame1.disconnectPlayer());
         Assert.assertEquals(0, mobileGame2.disconnectPlayer());
+    }
+
+    @Test
+    public void testIToString(){
+        Assert.assertEquals("MobileGame(super=Game(maxPlayers=1000, gameName=-, gameDescription=-, " +
+                "gamePublisher=-, currentPlayers=1, reliseYear=2016, minimumAgeForThisGame=3, language=-), " +
+                "androidVersion=-)", mobileGame3.toString());
     }
 }
