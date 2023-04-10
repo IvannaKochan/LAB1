@@ -1,28 +1,41 @@
 package ua.lviv.iot.algo.part1.lab_2;
+import lombok.AllArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameManager {
-    private static final List<Game> games = new ArrayList<>();
+    private  List<Game> games = new ArrayList<>();
 
-    public static void addGame(final Game game){games.add(game);}
 
-    public static List<Game> findAllGamesYoungerThan(List<Game> gamesList, int reliseYearTheOldestGame) {
-        return gamesList.stream().filter(g ->(g.getReliseYear() > reliseYearTheOldestGame)).toList();
+    public GameManager(List<Game> games) {
+        this.games = new ArrayList<>(games);
     }
 
-    public static List<Game> findAllGamesForThisNumberOfPlayers(List<Game> gamesList, int numberOfPlayers) {
-        return gamesList.stream().filter(g -> (numberOfPlayers <= g.maxPlayers)).toList();
+    public void addGame(final Game game){games.add(game);}
+
+    public  List<Game> findAllGamesYoungerThan(final int reliseYearTheOldestGame) {
+        return games
+                .stream()
+                .filter(g ->(g.getReliseYear() > reliseYearTheOldestGame))
+                .toList();
     }
 
-    public static void printAllGamesYoungerThan(List<Game> gamesList, int reliseYearTheOldestGame){
+    public  List<Game> findAllGamesForThisNumberOfPlayers( int numberOfPlayers) {
+        return games
+                .stream()
+                .filter(g -> (numberOfPlayers <= g.maxPlayers))
+                .toList();
+    }
+
+    public  void printAllGamesYoungerThan(int reliseYearTheOldestGame){
         System.out.println("Games which was realised later than "+ reliseYearTheOldestGame + ":");
-        findAllGamesYoungerThan(gamesList, reliseYearTheOldestGame).forEach(System.out::println);
+        findAllGamesYoungerThan(reliseYearTheOldestGame).forEach(System.out::println);
     }
 
-    public static void printAllGamesWithNeededNumberOfPlayer(List<Game> gameList, int numberOfPlayers) {
-        System.out.println("Games in which can play " + numberOfPlayers + " number of players");
-        findAllGamesForThisNumberOfPlayers(gameList, numberOfPlayers).forEach(System.out::println);
+    public  void printAllGamesWithNeededNumberOfPlayer( int numberOfPlayers) {
+        System.out.println("Games in which can play " + numberOfPlayers + "number of players");
+        findAllGamesForThisNumberOfPlayers(  numberOfPlayers).forEach(System.out::println);
     }
 }
 
