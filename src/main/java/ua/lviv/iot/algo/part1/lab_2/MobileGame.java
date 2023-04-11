@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab_2;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
@@ -8,14 +10,17 @@ public class MobileGame extends Game {
 
     private String androidVersion;
 
-    public MobileGame(String gameName, String gameDescription, String gamePublisher, int currentPlayers, int reliseYear,
-                      int minimumAgeForThisGame, String language, String androidVersion, int maxPlayers) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
+    public MobileGame(final String gameName, final String gameDescription,
+                      final String gamePublisher, final int currentPlayers,
+                      final int reliseYear, final int minimumAgeForThisGame,
+                      final String language, final String androidVersion, final int maxPlayers) {
+        super(gameName, gameDescription, gamePublisher, currentPlayers,
+                reliseYear, minimumAgeForThisGame, language, maxPlayers);
         this.androidVersion = androidVersion;
     }
 
     @Override
-    public int connectPlayer(){
+    public int connectPlayer() {
         if (currentPlayers < maxPlayers) {
             return ++currentPlayers;
         }
@@ -24,7 +29,7 @@ public class MobileGame extends Game {
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
+        if (currentPlayers >= 1) {
             return --currentPlayers;
         }
         return 0;

@@ -1,10 +1,12 @@
 package ua.lviv.iot.algo.part1.lab_2;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class ComputerGame extends Game{
+public class ComputerGame extends Game {
 
     private String gameVersion;
     private String gameGenre;
@@ -12,10 +14,14 @@ public class ComputerGame extends Game{
     private double rating;
     private int minPlayers;
 
-    public ComputerGame(String gameName,String gameDescription, String gamePublisher, int currentPlayers, int reliseYear,
-                        int minimumAgeForThisGame, String language, String gameVersion, String gameGenre, String gamePlatform,
-                        double rating, int maxPlayers, int minPlayers) {
-        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language, maxPlayers);
+    public ComputerGame(final String gameName, final String gameDescription,
+                        final String gamePublisher, final int currentPlayers,
+                        final  int reliseYear, final int minimumAgeForThisGame,
+                        final String language, final String gameVersion,
+                        final String gameGenre, final String gamePlatform,
+                        final double rating, final int maxPlayers, final int minPlayers) {
+        super(gameName, gameDescription, gamePublisher, currentPlayers, reliseYear,
+                minimumAgeForThisGame, language, maxPlayers);
         this.gameVersion = gameVersion;
         this.gameGenre = gameGenre;
         this.gamePlatform = gamePlatform;
@@ -24,7 +30,7 @@ public class ComputerGame extends Game{
     }
 
     @Override
-    public int connectPlayer(){
+    public int connectPlayer() {
         if (currentPlayers < maxPlayers) {
             return ++currentPlayers;
         }
@@ -33,7 +39,7 @@ public class ComputerGame extends Game{
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1){
+        if (currentPlayers >= 1) {
             return --currentPlayers;
         }
         return 0;

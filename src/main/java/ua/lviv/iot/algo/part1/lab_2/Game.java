@@ -1,5 +1,7 @@
 package ua.lviv.iot.algo.part1.lab_2;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
@@ -21,7 +23,9 @@ public abstract class Game {
     public abstract int disconnectPlayer();
 
 
-    public Game(String gameName,String gameDescription, String gamePublisher, int currentPlayers, int reliseYear, int minimumAgeForThisGame, String language, int maxPlayers){
+    public Game(final String gameName, final String gameDescription, final String gamePublisher,
+                final int currentPlayers, final int reliseYear, final int minimumAgeForThisGame,
+                final String language, final int maxPlayers) {
         this.gameName = gameName;
         this.gameDescription = gameDescription;
         this.gamePublisher = gamePublisher;
@@ -37,14 +41,18 @@ public abstract class Game {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return maxPlayers == game.maxPlayers && currentPlayers == game.currentPlayers && reliseYear == game.reliseYear && minimumAgeForThisGame == game.minimumAgeForThisGame && gameName.equals(game.gameName) && gameDescription.equals(game.gameDescription) && gamePublisher.equals(game.gamePublisher) && language.equals(game.language);
+        return maxPlayers == game.maxPlayers && currentPlayers == game
+                .currentPlayers && reliseYear == game.reliseYear &&
+                minimumAgeForThisGame == game.minimumAgeForThisGame
+                && gameName.equals(game.gameName) && gameDescription
+                .equals(game.gameDescription) && gamePublisher.equals(game
+                .gamePublisher) && language.equals(game.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maxPlayers, gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
+        return Objects.hash(maxPlayers, gameName, gameDescription,
+                gamePublisher, currentPlayers, reliseYear, minimumAgeForThisGame, language);
     }
-
-
 
 }
