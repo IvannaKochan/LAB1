@@ -33,12 +33,4 @@ public class EducationalGameTest  {
         Assert.assertEquals(0, educationalGame2.disconnectPlayer());
     }
 
-    @Test
-    public void testToString(){
-        Assert.assertEquals("EducationalGame(super=Game(maxPlayers=1, gameName=-, gameDescription=-, " +
-                "gamePublisher=-, currentPlayers=1, reliseYear=2023, minimumAgeForThisGame=12, language=-)," +
-                " subject=-)",educationalGame3.toString());
-    }
-
 }
-

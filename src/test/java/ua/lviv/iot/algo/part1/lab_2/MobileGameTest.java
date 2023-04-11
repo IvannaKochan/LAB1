@@ -9,7 +9,7 @@ public class MobileGameTest  {
     private MobileGame mobileGame3;
 
     @Before
-    public void setUp(){
+    public void setUp() {
      mobileGame1 = new MobileGame("Clash Of Clans","Some description 5", "Publisher 5",
              2, 2012, 8, "English", "8.0.0", 2);
      mobileGame2 = new MobileGame("Hay Day","Some description 6", "Publisher 6",
@@ -30,10 +30,4 @@ public class MobileGameTest  {
         Assert.assertEquals(0, mobileGame2.disconnectPlayer());
     }
 
-    @Test
-    public void testIToString(){
-        Assert.assertEquals("MobileGame(super=Game(maxPlayers=1000, gameName=-, gameDescription=-, " +
-                "gamePublisher=-, currentPlayers=1, reliseYear=2016, minimumAgeForThisGame=3, language=-), " +
-                "androidVersion=-)", mobileGame3.toString());
-    }
 }

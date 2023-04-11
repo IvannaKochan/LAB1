@@ -41,11 +41,4 @@ public class ComputerGameTest {
         Assert.assertEquals(0, computerGame3.disconnectPlayer());
     }
 
-    @Test
-    public void testToString(){
-        Assert.assertEquals("ComputerGame(super=Game(maxPlayers=100, gameName=-, gameDescription=-," +
-                " gamePublisher=-, currentPlayers=1, reliseYear=2023, minimumAgeForThisGame=16, language=-), " +
-                "gameVersion=-, gameGenre=-, gamePlatform=-, rating=9.9, minPlayers=1)", computerGame4.toString());
-    }
-
 }

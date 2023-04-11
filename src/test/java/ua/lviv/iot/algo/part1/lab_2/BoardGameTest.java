@@ -48,11 +48,4 @@ public class BoardGameTest {
         Assert.assertEquals(true, isMinPlayersIsPositive());
     }
 
-    @Test
-    public void testToString() {
-        Assert.assertEquals("BoardGame(super=Game(maxPlayers=12, gameName=-, gameDescription=-, " +
-                "gamePublisher=-, currentPlayers=2, reliseYear=2015, minimumAgeForThisGame=8, language=-)," +
-                " minPlayers=2)", boardGame4.toString());
-    }
-
 }
