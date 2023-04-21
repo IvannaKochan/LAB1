@@ -1,7 +1,7 @@
 package ua.lviv.iot.algo.part1.lab_2;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,18 +33,18 @@ public class GameManagerTest {
     @Test
     public void testFindAllGamesYoungerThan() {
         List<Game> result = manager.findAllGamesYoungerThan(2022);
-        Assert.assertEquals(3, result.size());
+        Assertions.assertEquals(3, result.size());
         for (Game game : result) {
-            Assert.assertEquals(2023, game.getReliseYear());
+            Assertions.assertEquals(2023, game.getReliseYear());
         }
     }
 
     @Test
     public void testFindAllGamesForThisNumberOfPlayers() {
         List<Game> result = manager.findAllGamesForThisNumberOfPlayers(50);
-        Assert.assertEquals(2, result.size());
+        Assertions.assertEquals(2, result.size());
         for (Game game : result) {
-            Assert.assertTrue(50 <= game.getMaxPlayers());
+            Assertions.assertTrue(50 <= game.getMaxPlayers());
         }
     }
 

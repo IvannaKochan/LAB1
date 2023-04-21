@@ -1,13 +1,13 @@
 package ua.lviv.iot.algo.part1.lab_2;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class EducationalGameTest  {
+public class EducationalGameTest {
 
     private EducationalGame educationalGame1;
     private EducationalGame educationalGame2;
-    private EducationalGame educationalGame3;
     @Before
     public void setUp() {
         educationalGame1 = new EducationalGame("Duolingo", "Some description 7",
@@ -16,10 +16,7 @@ public class EducationalGameTest  {
         educationalGame2 = new EducationalGame("AR Book", "Some description 8",
                 "Publisher 8", 1, 2023, 12, "English",
                 1, "Physics");
-        educationalGame3 = new EducationalGame("-", "-",
-                "-", 1, 2023, 12, "-",
-                1, "-");
-    }
+        }
 
     @Test
     public void testConnectPlayer() {

@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab_2;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,18 +11,14 @@ import java.util.Objects;
 @ToString
 public abstract class Game {
 
-    protected int maxPlayers;
-    protected String gameName;
-    protected String gameDescription;
-    protected String gamePublisher;
-    protected int currentPlayers;
-    protected int reliseYear;
-    protected int minimumAgeForThisGame;
-    protected String language;
-
-    public abstract int connectPlayer();
-    public abstract int disconnectPlayer();
-
+    private int maxPlayers;
+    private String gameName;
+    private String gameDescription;
+    private String gamePublisher;
+    private int currentPlayers;
+    private int reliseYear;
+    private int minimumAgeForThisGame;
+    private String language;
 
     public Game(final String gameName, final String gameDescription, final String gamePublisher,
                 final int currentPlayers, final int reliseYear, final int minimumAgeForThisGame,
@@ -36,17 +33,27 @@ public abstract class Game {
         this.maxPlayers = maxPlayers;
     }
 
+    public abstract int connectPlayer();
+
+    public abstract int disconnectPlayer();
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Game game = (Game) o;
-        return maxPlayers == game.maxPlayers && currentPlayers == game
-                .currentPlayers && reliseYear == game.reliseYear &&
-                minimumAgeForThisGame == game.minimumAgeForThisGame
-                && gameName.equals(game.gameName) && gameDescription
-                .equals(game.gameDescription) && gamePublisher.equals(game
-                .gamePublisher) && language.equals(game.language);
+        return maxPlayers == game.maxPlayers
+                && currentPlayers == game.currentPlayers
+                && reliseYear == game.reliseYear
+                && minimumAgeForThisGame == game.minimumAgeForThisGame
+                && gameName.equals(game.gameName)
+                && gameDescription.equals(game.gameDescription)
+                && gamePublisher.equals(game.gamePublisher)
+                && language.equals(game.language);
     }
 
     @Override

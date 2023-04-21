@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab_2;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -6,7 +7,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString(callSuper = true)
-public class BoardGame extends Game {
+public final class BoardGame extends Game {
 
     private int minPlayers;
 
@@ -22,19 +23,15 @@ public class BoardGame extends Game {
 
     @Override
     public int connectPlayer() {
-        if (currentPlayers < maxPlayers) {
-            return ++currentPlayers;
-        } else {
-        return maxPlayers;
+        if (getCurrentPlayers() < getMaxPlayers()) {
+            return getCurrentPlayers() + 1;
         }
+        return getCurrentPlayers();
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers > minPlayers) {
-            return currentPlayers - 1;
-        }
-        return 0;
+        return getCurrentPlayers() - 1;
     }
 }
 

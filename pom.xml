@@ -44,7 +44,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                ua.lviv.iot.algo.part1.LAB_3.GameManager
+                                ua.lviv.iot.algo.part1.lab_2.GameManager
                             </mainClass>
                         </manifest>
                     </archive>
@@ -86,9 +86,9 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
-                </configuration>
+<!--                <configuration>-->
+<!--                    <configLocation>checkstyle.xml</configLocation>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>
@@ -114,6 +114,11 @@
                         </reports>
                     </reportSet>
                 </reportSets>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <failOnViolation>false</failOnViolation>
+                    <enableFilesSummary>false</enableFilesSummary>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>

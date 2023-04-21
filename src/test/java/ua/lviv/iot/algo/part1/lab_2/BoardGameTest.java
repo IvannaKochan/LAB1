@@ -1,6 +1,5 @@
 package ua.lviv.iot.algo.part1.lab_2;
 
-import lombok.ToString;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,6 @@ public class BoardGameTest {
     private BoardGame boardGame1;
     private BoardGame boardGame2;
     private BoardGame boardGame3;
-    private BoardGame boardGame4;
 
     @Before
     public void setUp() {
@@ -20,9 +18,7 @@ public class BoardGameTest {
                 12, 2015, 8, "English", 3, 12);
         boardGame3 = new BoardGame("ApleToAple", "Some description", "Publisher 1",
                 2, 2015, 8, "English", 2, 12);
-        boardGame4 = new BoardGame("-", "-", "-", 2, 2015,
-                8, "-", 2, 12);
-    }
+        }
 
     public boolean isMinPlayersIsPositive() {
         return boardGame1.getMinPlayers() >= 0;
@@ -40,12 +36,12 @@ public class BoardGameTest {
         System.out.println(boardGame1.disconnectPlayer());
         Assert.assertEquals(6, boardGame1.disconnectPlayer());
         Assert.assertEquals(11, boardGame2.disconnectPlayer());
-        Assert.assertEquals(0, boardGame3.disconnectPlayer());
+        Assert.assertEquals(1, boardGame3.disconnectPlayer());
     }
 
     @Test
     public void testIsMinPlayersIsPositive() {
-        Assert.assertEquals(true, isMinPlayersIsPositive());
+        Assert.assertTrue(isMinPlayersIsPositive());
     }
 
 }

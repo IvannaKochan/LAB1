@@ -1,4 +1,5 @@
 package ua.lviv.iot.algo.part1.lab_2;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,17 +22,14 @@ public class MobileGame extends Game {
 
     @Override
     public int connectPlayer() {
-        if (currentPlayers < maxPlayers) {
-            return ++currentPlayers;
+        if (getCurrentPlayers() < getMaxPlayers()) {
+            return getCurrentPlayers() + 1;
         }
-        return currentPlayers;
+        return getCurrentPlayers();
     }
 
     @Override
     public int disconnectPlayer() {
-        if (currentPlayers >= 1) {
-            return --currentPlayers;
-        }
-        return 0;
+        return getCurrentPlayers() - 1;
     }
 }
