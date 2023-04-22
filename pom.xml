@@ -44,7 +44,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                ua.lviv.iot.algo.part1.lab_2.GameManager
+                                ua.lviv.iot.algo.part1.lab_2.managers.GameManager
                             </mainClass>
                         </manifest>
                     </archive>

@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab_2;
+package ua.lviv.iot.algo.part1.lab_2.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +32,16 @@ public final class BoardGame extends Game {
     @Override
     public int disconnectPlayer() {
         return getCurrentPlayers() - 1;
+    }
+
+    @Override
+    public String getHeaders(){
+        return super.getHeaders() + ", minPlayers";
+    }
+
+    @Override
+    public String toCSV(){
+        return super.toCSV() + ", " + minPlayers;
     }
 }
 
