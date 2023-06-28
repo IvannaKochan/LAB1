@@ -1,7 +1,8 @@
-package ua.lviv.iot.algo.part1.lab_2;
+package ua.lviv.iot.algo.part1.lab_2.managers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.algo.part1.lab_2.models.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -47,5 +48,8 @@ public class GameManagerTest {
             Assertions.assertTrue(50 <= game.getMaxPlayers());
         }
     }
+
+//    @Test
+//    public void test
 
 }

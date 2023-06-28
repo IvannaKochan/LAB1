@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab_2;
+package ua.lviv.iot.algo.part1.lab_2.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,6 +36,16 @@ public abstract class Game {
     public abstract int connectPlayer();
 
     public abstract int disconnectPlayer();
+
+    public String getHeaders() {
+      return "gameName, gameDescription, gamePublisher, currentPlayers, reliseYear, " +
+              "minimumAgeForThisGame, language, maxPlayers";
+    }
+
+    public String toCSV() {
+        return gameName + ", " + gameDescription + ", " + gamePublisher + ", " + currentPlayers + ", " + reliseYear +
+                "," + minimumAgeForThisGame +", " + ", "+ language + ", " + maxPlayers;
+    }
 
     @Override
     public boolean equals(Object o) {

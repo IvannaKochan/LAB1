@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab_2;
+package ua.lviv.iot.algo.part1.lab_2.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -42,5 +42,15 @@ public final class ComputerGame extends Game {
     @Override
     public int disconnectPlayer() {
         return getCurrentPlayers() - 1;
+    }
+
+    @Override
+    public String getHeaders(){
+        return super.getHeaders() + ", gameVersion, gameGenre, gamePlatform, rating, minPlayers";
+    }
+
+    @Override
+    public String toCSV(){
+        return super.toCSV() + ", " +gameVersion + ", " + gameGenre + ", " + gamePlatform + ", " + rating + ", " + minPlayers;
     }
 }

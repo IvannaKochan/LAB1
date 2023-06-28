@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab_2;
+package ua.lviv.iot.algo.part1.lab_2.models;
 
 import org.junit.Assert;
 import org.junit.Before;
